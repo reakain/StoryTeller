@@ -14,13 +14,13 @@ inflector = inflect.engine()
 
 class Storybuilder(object):
     def __init__(self):
-        with codecs.open("robinhood.txt", encoding="utf-8") as f:
+        with codecs.open("source_text/robinhood.txt", encoding="utf-8") as f:
             text1 = repr(f.read())
-        with codecs.open("kingarther.txt", encoding="utf-8") as f:
+        with codecs.open("source_text/kingarther.txt", encoding="utf-8") as f:
             text2 = f.read()
-        with codecs.open("knights.txt", encoding="utf-8") as f:
+        with codecs.open("source_text/knights.txt", encoding="utf-8") as f:
             text3 = repr(f.read())
-        with codecs.open("grimm.txt", encoding="utf-8") as f:
+        with codecs.open("source_text/grimm.txt", encoding="utf-8") as f:
             text4 = repr(f.read())
         m_text1 = markovify.Text(text1)
         m_text2 = markovify.Text(text2)
