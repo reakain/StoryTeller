@@ -30,12 +30,23 @@ class Storybuilder(object):
         self.storyblock = markovify.combine([ m_text1, m_text2, m_text3, m_text4 ], [ 1, 1, 1, 1 ])
     
     def make_tweet(self):
-        tweet = self.storyblock.make_sentence_with_start("Once", strict=True, max_words=30)
-        tweet += " " + self.storyblock.make_sentence(max_words=30)
-        tweet += " " + self.storyblock.make_sentence(max_words=30)
-        tweet += " " + self.storyblock.make_sentence(max_words=30)
+        tweet = self.build_tweet()
+        while(len(tweet) > 130):
+            tweet = self.build_tweet()
+
         return tweet
 
+    def build_tweet(self):
+        tweet = self.storyblock.make_sentence_with_start("Once", strict=True, max_word=10)
+        tweet += " " + self.get_sentence()
+        tweet += " " + self.get_sentence()
+        return tweet
+
+    def get_sentence(self):
+        sent = self.storyblock.make_short_sentence(40)
+        while(sent == None):
+            sent = self.storyblock.make_short_sentence(40)
+        return sent
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -50,5 +61,6 @@ class POSifiedText(markovify.Text):
 
 if __name__ == "__main__":
     storybuilder = Storybuilder()
-
-    print(storybuilder.make_tweet())
+    tweet = storybuilder.make_tweet()
+    print(len(tweet))
+    print(tweet)
