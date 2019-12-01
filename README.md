@@ -31,3 +31,6 @@ Note: Everything is in the bash shell for this part! This is also for digital oc
     `docker run -id -e CONSUMER_KEY="key val here" -e CONSUMER_SECRET="key val here" -e ACCESS_TOKEN="key val here" -e ACCESS_TOKEN_SECRET="key val here" storyteller-bot`
 
 Et voila! Functioning docker image running on your droplet (which is called a docker-machine)
+
+## References
+- [Guru99 Walkthrough of nltk and text parsing](https://www.guru99.com/word-embedding-word2vec.html)
