@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# QuestGiver/bots/autoreply.py
+# StoryTeller/bots/autoreply.py
 
 import tweepy
 import logging
@@ -51,7 +51,7 @@ def main():
     check_time = time.time()
     
     while True:
-        since_id = check_mentions(api, ["story", "tail", "narrative"], since_id, check_time)
+        since_id = check_mentions(api, ["story", "tale", "narrative"], since_id, check_time)
         check_time = time.time()
         logger.info("Waiting...")
         time.sleep(60)

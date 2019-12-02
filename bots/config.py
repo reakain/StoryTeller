@@ -1,4 +1,4 @@
-# QuestGiver/bots/config.py
+# StoryTeller/bots/config.py
 import tweepy
 import logging
 import os

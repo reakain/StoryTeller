@@ -10,7 +10,7 @@ This python3 program uses tweepy and nltk to create procedural quest dialogue an
 
  2. Test your build from powershell with
    
-     ```docker run -it -e CONSUMER_KEY="key val here" -e CONSUMER_SECRET="key val here" -e ACCESS_TOKEN="key val here" -e ACCESS_TOKEN_SECRET="key val here" storyteller-bot```
+     ```docker run -it -e CONSUMER_KEY=$StorytellerConsumer -e CONSUMER_SECRET=$StorytellerConsumerSecret -e ACCESS_TOKEN=$StorytellerAccess -e ACCESS_TOKEN_SECRET=$StorytellerAccessSecret storyteller-bot```
 
 ## Build and Deploy Docker Image
 Note: Everything is in the bash shell for this part! This is also for digital ocean droplets, and `twitter-bot-drop` is the name of my digital ocean droplet that I'm making and `storyteller-bot` is the docker image name.
@@ -28,7 +28,7 @@ Note: Everything is in the bash shell for this part! This is also for digital oc
 
 4. And then deploy it! The only difference here is the -id instead of -it which just tells it you want it to be detached from your shell.
    
-    `docker run -id -e CONSUMER_KEY="key val here" -e CONSUMER_SECRET="key val here" -e ACCESS_TOKEN="key val here" -e ACCESS_TOKEN_SECRET="key val here" storyteller-bot`
+    `docker run -id -e CONSUMER_KEY=$StorytellerConsumer -e CONSUMER_SECRET=$StorytellerConsumerSecret -e ACCESS_TOKEN=$StorytellerAccess -e ACCESS_TOKEN_SECRET=$StorytellerAccessSecret storyteller-bot`
 
 Et voila! Functioning docker image running on your droplet (which is called a docker-machine)
 

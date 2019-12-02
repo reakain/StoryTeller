@@ -11,4 +11,4 @@ COPY requirements.txt /tmp
 RUN pip3 install -r /tmp/requirements.txt
 
 WORKDIR /bots
-CMD ["python3", "autoreply.py"]
+CMD ["python3 -m spacy download en_core_web_md;", "python3", "autoreply.py"]
